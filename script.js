@@ -8,29 +8,29 @@ function computerPlay() {
         randomPick = "Scissors"
     };
     return randomPick;
-};
+}; // setup a random generator for our CPU opponent
 
-const Paper = "Paper";
+const playerSelection = "roCk";
 
 function playRound(playerSelection) {
     
-    if (playerSelection == "Rock" && computerPlay() == "Rock") {
+    if (playerSelection.toUpperCase() == "ROCK" && computerPlay() == "Rock") {
         outcome = "Draw!" 
-    } else if (playerSelection == "Rock" && computerPlay() == "Paper") {
+    } else if (playerSelection.toUpperCase() == "ROCK" && computerPlay() == "Paper") {
         outcome = "You lose! Paper beats rock!" 
-    } else if (playerSelection == "Rock" && computerPlay() == "Scissors") {
+    } else if (playerSelection.toUpperCase() == "ROCK" && computerPlay() == "Scissors") {
         outcome = "You win! Rock beats scissors!"
         // setup all of the "rock" rules
-    } else if (playerSelection == "Paper" && computerPlay() == "Rock") {
+    } else if (playerSelection.toUpperCase() == "PAPER" && computerPlay() == "Rock") {
         outcome = "You win! Paper Beats rock!"
-    } else if (playerSelection == "Paper" && computerPlay() == "Paper") {
+    } else if (playerSelection.toUpperCase() == "PAPER" && computerPlay() == "Paper") {
         outcome = "Draw!"
-    } else if (playerSelection == "Paper" && computerPlay() == "Scissors") {
+    } else if (playerSelection.toUpperCase() == "PAPER" && computerPlay() == "Scissors") {
     outcome = "You lose! Scissors beats paper!"
         // setup all of the "paper" rules
-    } else if (playerSelection == "Scissors" && computerPlay() == "Rock") {
+    } else if (playerSelection.toUpperCase() == "SCISSORS" && computerPlay() == "Rock") {
         outcome = "You lose! Rock beats scissors"
-    } else if (playerSelection == "Scissors" && computerPlay() == "Paper") {
+    } else if (playerSelection.toUpperCase() == "SCISSORS" && computerPlay() == "Paper") {
         outcome = "You win! Scissors beats Paper"
     } else {
     outcome = "Draw!"
