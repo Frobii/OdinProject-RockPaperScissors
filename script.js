@@ -10,28 +10,27 @@ function computerPlay() {
     return randomPick;
 };
 
-let computerSelection = computerPlay();
+const Paper = "Paper";
 
-
-function gameRules() {
+function playRound(playerSelection) {
     
-    if (playerSelection == "Rock" && computerSelection == "Rock") {
+    if (playerSelection == "Rock" && computerPlay() == "Rock") {
         outcome = "Draw!" 
-    } else if (playerSelection == "Rock" && computerSelection == "Paper") {
+    } else if (playerSelection == "Rock" && computerPlay() == "Paper") {
         outcome = "You lose! Paper beats rock!" 
-    } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
+    } else if (playerSelection == "Rock" && computerPlay() == "Scissors") {
         outcome = "You win! Rock beats scissors!"
         // setup all of the "rock" rules
-    } else if (playerSelection == "Paper" && computerSelection == "Rock") {
+    } else if (playerSelection == "Paper" && computerPlay() == "Rock") {
         outcome = "You win! Paper Beats rock!"
-    } else if (playerSelection == "Paper" && computerSelection == "Paper") {
+    } else if (playerSelection == "Paper" && computerPlay() == "Paper") {
         outcome = "Draw!"
-    } else if (playerSelection == "Paper" && computerSelection == "Scissors") {
+    } else if (playerSelection == "Paper" && computerPlay() == "Scissors") {
     outcome = "You lose! Scissors beats paper!"
         // setup all of the "paper" rules
-    } else if (playerSelection == "Scissors" && computerSelection == "Rock") {
+    } else if (playerSelection == "Scissors" && computerPlay() == "Rock") {
         outcome = "You lose! Rock beats scissors"
-    } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
+    } else if (playerSelection == "Scissors" && computerPlay() == "Paper") {
         outcome = "You win! Scissors beats Paper"
     } else {
     outcome = "Draw!"
