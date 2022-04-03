@@ -38,4 +38,35 @@ function playRound(playerSelection) {
 
     return outcome;
     
-} 
+};
+
+let winCounter = 0;
+let lossCounter = 0;
+
+function game() {
+    playRound(playerSelection); {
+        if (outcome == 
+            "You win! Scissors beats Paper" ||
+            outcome == 
+            "You win! Paper Beats rock!" ||
+            outcome == 
+            "You win! Rock beats scissors!" ) 
+            { winCounter++;
+                // setup a counter that goes up by one every time the player wins
+        } else if 
+            (outcome === 
+            "You lose! Paper beats rock!" ||
+            outcome ==
+            "You lose! Scissors beats paper!" ||
+            outcome ==
+            "You lose! Rock beats scissors" )
+            { lossCounter++;
+                // setup a counter that goes up by one every time the player loses
+        } else 
+            (outcome ===
+            "Draw!");
+    return outcome
+    };
+    
+};
+
