@@ -1,4 +1,5 @@
 function computerPlay() {
+
    let randomPickNumber = Math.floor(Math.random() * 3);
     if (randomPickNumber == 0 ) {
         randomPick = "Rock"
@@ -8,9 +9,9 @@ function computerPlay() {
         randomPick = "Scissors"
     };
     return randomPick;
+
 }; // setup a random generator for our CPU opponent
 
-const playerSelection = "roCk";
 
 function playRound(playerSelection) {
     
@@ -36,7 +37,7 @@ function playRound(playerSelection) {
     outcome = "Draw!"
     };  // setup all of the "scissors" rules
 
-    return outcome;
+    return alert(outcome);
     
 };
 
@@ -45,16 +46,9 @@ let lossCounter = 0;
 let gameOver = "";
 
 function game() {
-    if (winCounter >= 5 && lossCounter < 5) {
-        gameOver = "You were the first to 5 wins! Conratulations!"
-    };
-     // create game over statement for a win
 
-    if (lossCounter >= 5 && winCounter < 5) {
-        gameOver = "The computer beat you to 5 wins! Better luck next time!"
-    };
-     // create game over statement for a loss
-
+    let playerSelection = prompt("Rock, Paper, Scissors!");
+    
         playRound(playerSelection); {
             if (outcome == 
                 "You win! Scissors beats Paper" ||
@@ -76,7 +70,41 @@ function game() {
             } else 
                 (outcome ===
                 "Draw!");
-        return outcome
-    };
+            return outcome;
+        };
+
 };
 
+function startGame() {
+
+    for (winCounter < 5; lossCounter < 5;) {
+        game();
+    };
+};  // create a function which I can call on to start the game & loop it when a round is over
+
+startGame();
+
+
+if (winCounter = 5) {
+
+    gameOver = prompt("You were the first to 5 wins! Congratulations! Play again? Y/N")
+ // create game over statement for a win
+
+} else if (lossCounter = 5) {
+    gameOver = prompt("The computer beat you to 5 wins! Better luck next time! Play again? Y/N") 
+ // create game over statement for a loss
+
+};
+
+
+if (gameOver.toUpperCase() == "Y") {
+
+    winCounter = 0;
+    lossCounter = 0;
+    startGame();
+
+} else if (gameOver.toUpperCase() == "N" ) {
+
+    alert("Thanks for playing!");
+
+};  // create an if/else if statements so the player can choose to play again once the winner is decided
