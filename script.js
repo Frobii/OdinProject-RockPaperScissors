@@ -13,29 +13,32 @@ function computerPlay() {
 }; // setup a random generator for our CPU opponent
 
 
-function playRound(playerSelection) {
-    
-    if (playerSelection.toUpperCase() == "ROCK" && computerPlay() == "Rock") {
+function playRound(playerSelection, computerSelection) {
+
+    computerSelection = computerPlay();
+
+    if (playerSelection.toUpperCase() == "ROCK" && computerSelection == "Rock") {
         outcome = "Draw!" 
-    } else if (playerSelection.toUpperCase() == "ROCK" && computerPlay() == "Paper") {
+    } else if (playerSelection.toUpperCase() == "ROCK" && computerSelection == "Paper") {
         outcome = "You lose! Paper beats rock!" 
-    } else if (playerSelection.toUpperCase() == "ROCK" && computerPlay() == "Scissors") {
+    } else if (playerSelection.toUpperCase() == "ROCK" && computerSelection == "Scissors") {
         outcome = "You win! Rock beats scissors!"
         // setup all of the "rock" rules
-    } else if (playerSelection.toUpperCase() == "PAPER" && computerPlay() == "Rock") {
+    } else if (playerSelection.toUpperCase() == "PAPER" && computerSelection == "Rock") {
         outcome = "You win! Paper Beats rock!"
-    } else if (playerSelection.toUpperCase() == "PAPER" && computerPlay() == "Paper") {
+    } else if (playerSelection.toUpperCase() == "PAPER" && computerSelection == "Paper") {
         outcome = "Draw!"
-    } else if (playerSelection.toUpperCase() == "PAPER" && computerPlay() == "Scissors") {
+    } else if (playerSelection.toUpperCase() == "PAPER" && computerSelection == "Scissors") {
     outcome = "You lose! Scissors beats paper!"
         // setup all of the "paper" rules
-    } else if (playerSelection.toUpperCase() == "SCISSORS" && computerPlay() == "Rock") {
+    } else if (playerSelection.toUpperCase() == "SCISSORS" && computerSelection == "Rock") {
         outcome = "You lose! Rock beats scissors"
-    } else if (playerSelection.toUpperCase() == "SCISSORS" && computerPlay() == "Paper") {
+    } else if (playerSelection.toUpperCase() == "SCISSORS" && computerSelection == "Paper") {
         outcome = "You win! Scissors beats Paper"
-    } else {
-    outcome = "Draw!"
-    };  // setup all of the "scissors" rules
+    } else if (playerSelection.toUpperCase() == "SCISSORS" && computerSelection == "Scissors") {
+        outcome = "Draw!"; // setup all of the "scissors" rules
+    } else { outcome = "Please make a valid selection."
+    };  
 
     return alert(outcome);
     
@@ -59,7 +62,7 @@ function game() {
                 { winCounter++;
                     // setup a counter that goes up by one every time the player wins
             } else if 
-                (outcome === 
+                (outcome == 
                 "You lose! Paper beats rock!" ||
                 outcome ==
                 "You lose! Scissors beats paper!" ||
@@ -67,8 +70,8 @@ function game() {
                 "You lose! Rock beats scissors" )
                 { lossCounter++;
                     // setup a counter that goes up by one every time the player loses
-            } else 
-                (outcome ===
+            } else if
+                (outcome ==
                 "Draw!");
             return outcome;
         };
@@ -78,19 +81,19 @@ function game() {
 function startGame() {
 
     for (winCounter < 5; lossCounter < 5;) {
-        game();
+        game(); 
     };
 };  // create a function which I can call on to start the game & loop it when a round is over
 
 startGame();
 
 
-if (winCounter = 5) {
+if (winCounter == 5) {
 
     gameOver = prompt("You were the first to 5 wins! Congratulations! Play again? Y/N")
  // create game over statement for a win
 
-} else if (lossCounter = 5) {
+} else if (lossCounter == 5) {
     gameOver = prompt("The computer beat you to 5 wins! Better luck next time! Play again? Y/N") 
  // create game over statement for a loss
 
@@ -107,4 +110,4 @@ if (gameOver.toUpperCase() == "Y") {
 
     alert("Thanks for playing!");
 
-};  // create an if/else if statements so the player can choose to play again once the winner is decided
+};  // create if/else if statements so the player can choose to play again once the game is over
