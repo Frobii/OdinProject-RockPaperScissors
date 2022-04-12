@@ -46,7 +46,8 @@ function playRound(playerSelection, computerSelection) {
 
 let winCounter = 0;
 let lossCounter = 0;
-let gameOver = "";
+let  i = 0;
+let reset = "";
 
 function game() {
 
@@ -78,36 +79,48 @@ function game() {
 
 };
 
-function startGame() {
+function startGame() {   // create a function which I can call on to start the game & loop it when a round is over
 
-    for (winCounter < 5; lossCounter < 5;) {
+    for (i = 0; i < 5; i++) {
         game(); 
+        
+        if (outcome == "Draw!") {
+            i--;
+        } else if (outcome == "Please make a valid selection.") {
+            i--;
+        }; // use an if else statement to make i not increment if there is a draw or a selection isn't valid
+        
+
+        for (x = 0; x < 1; x++)   // make a for loop so that invalid selections won't close the prompt
+            if (winCounter == 3) { // create an if else statement for if the player wins
+                reset = prompt("You were the best out of 5! Play again? Y/N")
+                if (reset.toUpperCase() == "Y") { 
+                    winCounter = 0;
+                    lossCounter = 0;
+                    startGame();
+                } else if (reset.toUpperCase() == "N") {
+                    alert("Thanks for Playing!");
+                    break; // use a break to stop the game from restarting
+                } else {
+                    alert("Please make a valid selection.");
+                    x--; // keeps the for loop going if something invalid is typed in the prompt
+                };
+            } else if (lossCounter == 3) {    // create an if else statement for if the player loses 
+                reset = prompt("Your opponent was the best out of 5! Play again? Y/N")
+                if (reset.toUpperCase() == "Y") { 
+                    winCounter = 0;
+                    lossCounter = 0;
+                    startGame();
+                } else if (reset.toUpperCase() == "N") {
+                    alert("Thanks for Playing!");
+                    break;
+                } else {  
+                    alert("Please make a valid selection.");
+                    x--;  
+                };
+            
+        };
     };
-};  // create a function which I can call on to start the game & loop it when a round is over
+}; 
 
-startGame();
-
-
-if (winCounter == 5) {
-
-    gameOver = prompt("You were the first to 5 wins! Congratulations! Play again? Y/N")
- // create game over statement for a win
-
-} else if (lossCounter == 5) {
-    gameOver = prompt("The computer beat you to 5 wins! Better luck next time! Play again? Y/N") 
- // create game over statement for a loss
-
-};
-
-
-if (gameOver.toUpperCase() == "Y") {
-
-    winCounter = 0;
-    lossCounter = 0;
-    startGame();
-
-} else if (gameOver.toUpperCase() == "N" ) {
-
-    alert("Thanks for playing!");
-
-};  // create if/else if statements so the player can choose to play again once the game is over
+startGame();     // call on a function to start the game
