@@ -80,6 +80,9 @@ const rockButton = document.querySelector(".rock");
 const paperButton = document.querySelector(".paper");
 const scissorsButton = document.querySelector(".scissors");
 
-rockButton.addEventListener('click', () => playRound());
-paperButton.addEventListener('click', () => playRound());
-scissorsButton.addEventListener('click', () => playRound());
+rockButton.addEventListener('click', () => 
+    playRound(playerSelection = "rock"));
+paperButton.addEventListener('click', () => 
+    playRound(playerSelection = "paper"));
+scissorsButton.addEventListener('click', () => 
+    playRound(playerSelection = "scissors"));
