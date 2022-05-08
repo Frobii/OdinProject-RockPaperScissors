@@ -1,3 +1,6 @@
+let winCounter = 0;
+let lossCounter = 0;
+
 function computerPlay() {
 
    let randomPickNumber = Math.floor(Math.random() * 3);
@@ -11,7 +14,6 @@ function computerPlay() {
     return randomPick;
 
 }; // setup a random generator for our CPU opponent
-
 
 function playRound(playerSelection, computerSelection) {
 
@@ -44,11 +46,6 @@ function playRound(playerSelection, computerSelection) {
     
 };
 
-let winCounter = 0;
-let lossCounter = 0;
-let  i = 0;
-let reset = "";
-
 function game() {
 
     let playerSelection = prompt("Rock, Paper, Scissors!");
@@ -79,3 +76,10 @@ function game() {
 
 };
 
+const rockButton = document.querySelector(".rock");
+const paperButton = document.querySelector(".paper");
+const scissorsButton = document.querySelector(".scissors");
+
+rockButton.addEventListener('click', () => playRound());
+paperButton.addEventListener('click', () => playRound());
+scissorsButton.addEventListener('click', () => playRound());
