@@ -49,6 +49,7 @@ function playRound(playerSelection, computerSelection) {
         outcome == 
         "You win! Rock beats scissors!" ) 
         { winCounter++;
+            winsDiv.textContent = `${winCounter}`;
             // setup a counter that goes up by one every time the player wins
     } else if 
         (outcome == 
@@ -58,11 +59,15 @@ function playRound(playerSelection, computerSelection) {
         outcome ==
         "You lose! Rock beats scissors" )
         { lossCounter++;
+            lossesDiv.textContent = `${lossCounter}`;
            // setup a counter that goes up by one every time the player loses
     };
 
     return alert(outcome);
 };
+
+const winsDiv = document.querySelector(".wins");
+const lossesDiv = document.querySelector(".losses");
 
 const rockButton = document.querySelector(".rock");
 const paperButton = document.querySelector(".paper");
