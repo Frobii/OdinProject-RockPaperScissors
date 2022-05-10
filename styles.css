@@ -1,8 +1,22 @@
-.title {
+.gameInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.title {
+    font-size: 40px;
+    text-decoration: underline;
     margin-bottom: 10px;
+}
+
+.rules {
+    font-style: italic;
+}
+
+.resultHeader {
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .roundResults {
@@ -10,6 +24,7 @@
     gap: 40px;
     align-items: center;
     justify-content: center;
+    padding-bottom: 10px;
 }
 
 .buttons {
@@ -18,4 +33,16 @@
     justify-content: center;
     gap: 10px;
     padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.resetButton {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 10px;
+}
+
+.resetFrame {
+    padding: 1px;
 }
