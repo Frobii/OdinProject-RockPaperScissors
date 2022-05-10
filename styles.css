@@ -36,6 +36,10 @@
     padding-bottom: 25px;
 }
 
+.rock, .paper, .scissors {
+    width: 65px;
+}
+
 .resetButton {
     display: flex;
     justify-content: center;
