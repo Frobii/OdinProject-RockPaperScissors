@@ -80,7 +80,6 @@ function resetGame() {
     roundInfo.textContent = "Choose your weapon!"
 };
 
-
 const winsDiv = document.querySelector(".wins");
 const lossesDiv = document.querySelector(".losses");
 
