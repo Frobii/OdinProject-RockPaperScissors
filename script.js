@@ -63,15 +63,34 @@ function playRound(playerSelection, computerSelection) {
            // setup a counter that goes up by one every time the player loses
     };
 
-    return alert(outcome);
+    if (winCounter >= 5) {
+        roundInfo.textContent = "YOU WIN!";
+    } else if (lossCounter >= 5) {
+        roundInfo.textContent = "YOU LOSE!";
+    } else if (winCounter < 5 && lossCounter < 5 ) { 
+        roundInfo.textContent = outcome;
+    };
 };
+
+function resetGame() {
+    lossCounter = 0;
+    winCounter = 0;
+    lossesDiv.textContent = "0";
+    winsDiv.textContent = "0";
+    roundInfo.textContent = "Choose your weapon!"
+};
+
 
 const winsDiv = document.querySelector(".wins");
 const lossesDiv = document.querySelector(".losses");
 
+const roundInfo = document.querySelector(".roundInfo")
+
 const rockButton = document.querySelector(".rock");
 const paperButton = document.querySelector(".paper");
 const scissorsButton = document.querySelector(".scissors");
+
+const resetButton = document.querySelector(".resetButton");
 
 rockButton.addEventListener('click', () => 
     playRound(playerSelection = "rock"));
@@ -79,3 +98,6 @@ paperButton.addEventListener('click', () =>
     playRound(playerSelection = "paper"));
 scissorsButton.addEventListener('click', () => 
     playRound(playerSelection = "scissors"));
+
+resetButton.addEventListener('click', () => 
+    resetGame());

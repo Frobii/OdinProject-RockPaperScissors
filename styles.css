@@ -17,6 +17,8 @@
 .resultHeader {
     margin-top: 10px;
     margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
 }
 
 .roundResults {
@@ -24,7 +26,15 @@
     gap: 40px;
     align-items: center;
     justify-content: center;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+.roundInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    font-size: 20px;
 }
 
 .buttons {
@@ -40,13 +50,13 @@
     width: 65px;
 }
 
-.resetButton {
+.resetFrame {
     display: flex;
     justify-content: center;
     align-content: center;
     margin-top: 10px;
 }
 
-.resetFrame {
+.resetButton {
     padding: 1px;
 }
