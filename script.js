@@ -63,9 +63,9 @@ function playRound(playerSelection, computerSelection) {
            // setup a counter that goes up by one every time the player loses
     };
 
-    if (winCounter >= 5) {
+    if (winCounter >= 5 && lossCounter < 5) {
         roundInfo.textContent = "YOU WIN!";
-    } else if (lossCounter >= 5) {
+    } else if (lossCounter >= 5 && winCounter < 5) {
         roundInfo.textContent = "YOU LOSE!";
     } else if (winCounter < 5 && lossCounter < 5 ) { 
         roundInfo.textContent = outcome;
@@ -84,7 +84,7 @@ function resetGame() {
 const winsDiv = document.querySelector(".wins");
 const lossesDiv = document.querySelector(".losses");
 
-const roundInfo = document.querySelector(".roundInfo")
+const roundInfo = document.querySelector(".roundInfo");
 
 const rockButton = document.querySelector(".rock");
 const paperButton = document.querySelector(".paper");

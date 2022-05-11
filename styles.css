@@ -14,19 +14,23 @@
     font-style: italic;
 }
 
-.resultHeader {
+.resultContainer {
     margin-top: 10px;
     margin-bottom: 5px;
     display: flex;
     justify-content: center;
+    padding-bottom: 20px;
+    gap: 15px;
 }
 
-.roundResults {
+h3 {
+    margin-top: 0px;
+}
+
+.wins, .losses {
     display: flex;
-    gap: 40px;
-    align-items: center;
     justify-content: center;
-    padding-bottom: 20px;
+    width: 52px;
 }
 
 .roundInfo {
