@@ -66,7 +66,7 @@ function playRound(playerSelection, computerSelection) {
     if (winCounter >= 5 && lossCounter < 5) {
         roundInfo.textContent = "YOU WIN!";
     } else if (lossCounter >= 5 && winCounter < 5) {
-        roundInfo.textContent = "YOU LOSE!";
+        roundInfo.textContent = "COMPUTER WINS!";
     } else if (winCounter < 5 && lossCounter < 5 ) { 
         roundInfo.textContent = outcome;
     };
